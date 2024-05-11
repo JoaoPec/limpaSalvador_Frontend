@@ -1,0 +1,91 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #36bc65;
+    color: white;
+}
+
+.header img {
+    width: 100px;
+    height: 100px;
+}
+
+
+.navItens {
+    display: flex;
+    gap: 3.5rem;
+    margin-right: 2rem;
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+
+.navItens a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.autocomplete_container {
+    position: relative;
+    left: 8%;
+}
+
+.autocomplete_input {
+    width: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border-style: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.autocomplete_suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: black;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.autocomplete_suggestion {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete_suggestion:hover {
+    background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 768px) {
+    .navItens {
+        display: none;
+    }
+
+    .autocomplete_input {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .header img {
+        margin-bottom: 3rem;
+        width: 150px;
+        height: 120px;
+    }
+
+}
