@@ -1,12 +1,16 @@
 import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Mainheader from './components/MainHeader/MainHeader'
+import MainPage from './pages/Main/MainPage'
 
 function App() {
 
   return (
-    <>
-      <h1>limpaSalvador</h1>
-      p
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
