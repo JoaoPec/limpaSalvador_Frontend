@@ -1,5 +1,6 @@
 import React from "react";
 import MainHeader from "../../components/MainHeader/MainHeader";
+import MainFooter from "../../components/MainFooter/MainFooter";
 import classes from "./MainPage.module.css";
 
 const MainPage = () => {
@@ -24,7 +25,12 @@ const MainPage = () => {
                         </p>
                     </section>
                 </section>
+                <div className={classes.buttonsContainer}>
+                    <button>Registrar</button>
+                    <button>Login</button>
+                </div>
             </main>
+            <MainFooter />
         </>
     );
 };

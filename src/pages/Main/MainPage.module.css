@@ -18,6 +18,35 @@
     padding: 20px;
 }
 
+.container h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 20px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+.buttonsContainer button {
+    padding: 20px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #36BC65;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .origin {
     margin-top: 40px;
 }
