@@ -24,6 +24,9 @@ const MainHeader = (isLoged) => {
                             <a href="/actions">Conheça ações</a>
                         </li>
                         <li>
+                            <a href="/register">Cadastrar-se</a>
+                        </li>
+                        <li>
                             <a href="/login">Login</a>
                         </li>
                     </ul>

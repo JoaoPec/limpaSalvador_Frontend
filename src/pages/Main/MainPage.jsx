@@ -26,11 +26,15 @@ const MainPage = () => {
                     </section>
                 </section>
                 <div className={classes.buttonsContainer}>
-                    <button>Registrar</button>
-                    <button>Login</button>
+                    <a href="/register">
+                        <button>Registrar</button>
+                    </a>
+                    <a href="/login">
+                        <button>Login</button>
+                    </a>
                 </div>
+                <MainFooter />
             </main>
-            <MainFooter />
         </>
     );
 };

@@ -13,3 +13,17 @@
     right: 0;
     z-index: 10;
 }
+
+@media screen and (max-width: 768px) {
+    .footer {
+        margin-top: 50px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+
+    .footer a {
+        font-size: 12px;
+    }
+}
