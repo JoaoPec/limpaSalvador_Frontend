@@ -2,8 +2,11 @@ import React from "react";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import MainFooter from "../../components/MainFooter/MainFooter";
 import classes from "./MainPage.module.css";
+import { checkAuth } from '../../../lib/auth';
 
 const MainPage = () => {
+
+
     return (
         <>
             <MainHeader />
@@ -32,6 +35,7 @@ const MainPage = () => {
                     <a href="/login">
                         <button>Login</button>
                     </a>
+                    <button onClick={checkAuth}></button>
                 </div>
                 <MainFooter />
             </main>

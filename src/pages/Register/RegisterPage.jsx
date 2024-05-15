@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import classes from './RegisterPage.module.css';
 import MainHeader from '../../components/MainHeader/MainHeader';
 import MainFooter from '../../components/MainFooter/MainFooter';
 import { RegisterUser } from '../../../lib/auth';
 
 const RegisterPage = () => {
+
+    const navigate = useNavigate();
+
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -13,21 +17,38 @@ const RegisterPage = () => {
         confirmPassword: ''
     });
 
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
         setUser(prevUser => ({
             ...prevUser,
             [name]: value
         }));
     };
 
-    async function handleSubmit(event) {
-        event.preventDefault();
-        const response = await RegisterUser(user);
-        console.log(response);
-        if (response.error) {
-            alert(response.error);
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        if (user.password !== user.confirmPassword) {
+            alert("As senhas não coincidem.");
+            return;
         }
+
+        const res = await RegisterUser(user);
+
+        if (res.error == "User already exists") {
+            alert("Usuário já existe.");
+            return;
+        } else if (res.error) {
+            alert(res.error);
+            return;
+        }
+
+        alert("Registrado com sucesso!");
+
+        localStorage.setItem('token', res.token);
+
+        navigate("/")
+
     }
 
     return (

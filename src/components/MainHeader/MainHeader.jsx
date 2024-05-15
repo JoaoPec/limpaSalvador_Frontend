@@ -1,9 +1,8 @@
 import classes from './MainHeader.module.css';
 import AutocompleteInput from './AutoCompleteInput';
-
 const MainHeader = (isLoged) => {
 
-    isLoged = true;
+
 
     if (isLoged) {
         return (
