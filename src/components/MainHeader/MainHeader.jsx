@@ -1,11 +1,15 @@
 import classes from './MainHeader.module.css';
 import AutocompleteInput from './AutoCompleteInput';
-const MainHeader = (isLoged) => {
+import { Logout } from '../../../lib/auth';
 
+const MainHeader = () => {
+
+    const isLoged = localStorage.getItem('token');
 
 
     if (isLoged) {
         return (
+
             <header className={classes.header}>
                 <a href="/">
                     <img src="/logo.jpg" alt="logo" />
@@ -23,14 +27,12 @@ const MainHeader = (isLoged) => {
                             <a href="/actions">Conheça ações</a>
                         </li>
                         <li>
-                            <a href="/register">Cadastrar-se</a>
-                        </li>
-                        <li>
-                            <a href="/login">Login</a>
+                            <a onClick={Logout} href="/">Logout</a>
                         </li>
                     </ul>
                 </nav >
             </header>
+
         );
     }
     return (
@@ -51,7 +53,10 @@ const MainHeader = (isLoged) => {
                         <a href="/actions">Conheça ações</a>
                     </li>
                     <li>
-                        <a href="/login">Logout</a>
+                        <a href="/register">Cadastrar-se</a>
+                    </li>
+                    <li>
+                        <a href="/login">Login</a>
                     </li>
                 </ul>
             </nav >
