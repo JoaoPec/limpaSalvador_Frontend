@@ -48,6 +48,8 @@ const LoginPage = () => {
 
         localStorage.setItem('token', res.token);
 
+        alert("Logado com sucesso!");
+
         navigate("/")
 
     }
@@ -63,7 +65,7 @@ const LoginPage = () => {
                     <label htmlFor="password">Senha:</label>
                     <input type="password" id="password" name="password" value={user.password} onChange={handleInputChange} required />
                     <button type="submit">Login</button>
-                    <p>Não possui uma conta? <a href="/login">Faça o seu registro</a></p>
+                    <p>Não possui uma conta? <a href="/register">Faça o seu registro</a></p>
                 </form>
             </main>
             <MainFooter />
