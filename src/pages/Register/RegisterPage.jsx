@@ -45,7 +45,11 @@ const RegisterPage = () => {
 
         alert("Registrado com sucesso!");
 
+        console.log(res.user[0])
+
         localStorage.setItem('token', res.token);
+        localStorage.setItem('id', res.id);
+        localStorage.setItem('user', res.user[0])
 
         navigate("/")
 

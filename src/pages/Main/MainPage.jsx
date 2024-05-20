@@ -2,14 +2,18 @@ import React from "react";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import MainFooter from "../../components/MainFooter/MainFooter";
 import classes from "./MainPage.module.css";
+import { CheckAuth } from "../../../lib/auth";
 
 const MainPage = () => {
 
     const isLoged = localStorage.getItem('token');
+    const userName = localStorage.getItem('user.name');
 
     if (isLoged) {
+
         return (
             <>
+                <h1>Welcome{userName}</h1>
                 <MainHeader />
                 <main className={classes.main}>
                     <img src="/hero.jpg" alt="" />
@@ -29,6 +33,7 @@ const MainPage = () => {
                             </p>
                         </section>
                     </section>
+                    <button onClick={CheckAuth}>CheckAuth</button>
                     <MainFooter />
                 </main>
             </>

@@ -31,6 +31,7 @@ const LoginPage = () => {
     }
 
     async function handleSubmit(e) {
+
         e.preventDefault();
 
         const res = await LoginUser(user);
@@ -46,7 +47,10 @@ const LoginPage = () => {
             return;
         }
 
+        console.log(res)
+
         localStorage.setItem('token', res.token);
+        localStorage.setItem('id', res.id);
 
         alert("Logado com sucesso!");
 
