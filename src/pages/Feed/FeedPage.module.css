@@ -1,0 +1,118 @@
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.inputContainer textarea {
+    height: 150px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+}
+
+.inputContainer button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.inputContainer button:hover {
+    background-color: #e0e0e0;
+}
+
+.inputContainer input {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Custom styling for file input */
+.inputContainer input[type="file"] {
+    display: none;
+}
+
+.inputContainer label {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.inputContainer label:hover {
+    background-color: #e0e0e0;
+}
+
+.feedContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedCard {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    border-width: 10px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.feedCard img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.feedHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedHeader img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.feedFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedFooter button {
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}

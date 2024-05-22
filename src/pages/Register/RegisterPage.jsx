@@ -43,13 +43,13 @@ const RegisterPage = () => {
             return;
         }
 
-        alert("Registrado com sucesso!");
-
-        console.log(res.user[0])
 
         localStorage.setItem('token', res.token);
         localStorage.setItem('id', res.id);
-        localStorage.setItem('user', res.user[0])
+        localStorage.setItem('name', res.user[0].name);
+        localStorage.setItem('email', res.user[0].email);
+
+        alert("Registrado com sucesso!");
 
         navigate("/")
 
