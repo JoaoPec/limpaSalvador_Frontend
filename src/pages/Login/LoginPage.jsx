@@ -47,11 +47,12 @@ const LoginPage = () => {
             return;
         }
 
+        console.log(res.user.id)
 
         localStorage.setItem('token', res.token);
-        localStorage.setItem('id', res.user[0].id);
-        localStorage.setItem('name', res.user[0].name);
-        localStorage.setItem('email', res.user[0].email);
+        localStorage.setItem('id', res.user.id);
+        localStorage.setItem('name', res.user.name);
+        localStorage.setItem('email', res.user.email);
 
 
 

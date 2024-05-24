@@ -7,13 +7,11 @@ import { CheckAuth } from "../../../lib/auth";
 const MainPage = () => {
 
     const isLoged = localStorage.getItem('token');
-    const userName = localStorage.getItem('user.name');
 
     if (isLoged) {
 
         return (
             <>
-                <h1>Welcome{userName}</h1>
                 <MainHeader />
                 <main className={classes.main}>
                     <img src="/hero.jpg" alt="" />

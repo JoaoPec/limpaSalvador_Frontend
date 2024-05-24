@@ -1,18 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import MainFooter from "../../components/MainFooter/MainFooter";
 import classes from "./FeedPage.module.css";
+import { uploadPost } from "../../../lib/userActions";
 
 const FeedPage = () => {
+
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => response.json())
+            .then(data => setPosts(data));
+    }, []);
+
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+    const [image, setImage] = useState(null);
+
+    const handlePost = (e) => {
+        e.preventDefault();
+        console.log(title, content, image);
+
+        uploadPost({ title, content, image });
+    }
+
+    const handleImageChange = (e) => {
+        setImage(e.target.files[0]);
+    }
+
     return (
         <>
             <MainHeader />
             <main>
-                <div className={classes.inputContainer}>
-                    <label htmlFor="fileInput">Escolha uma imagem</label>
-                    <input type="file" id="fileInput" accept="image/*" />
-                    <textarea placeholder="Compartilhe a sua denúncia"></textarea>
-                    <button>Enviar</button>
+                <div>
+                    <form className={classes.inputContainer} onSubmit={handlePost}>
+                        <input
+                            type="text"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            className={classes.titleInput}
+                            placeholder="Crie um título para a sua postagem"
+                        />
+                        <textarea
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                            placeholder="Compartilhe a sua denúncia"
+                        />
+                        <label htmlFor="fileInput">Escolha uma imagem</label>
+                        <input
+                            type="file"
+                            id="fileInput"
+                            accept="image/*"
+                            onChange={handleImageChange}
+                        />
+                        <button>Enviar</button>
+                    </form>
                 </div>
 
                 <div className={classes.feedContainer}>
@@ -33,7 +77,8 @@ const FeedPage = () => {
 
 
                 </div>
-            </main>
+
+            </main >
             <MainFooter />
         </>
     );

@@ -46,8 +46,8 @@ const RegisterPage = () => {
 
         localStorage.setItem('token', res.token);
         localStorage.setItem('id', res.id);
-        localStorage.setItem('name', res.user[0].name);
-        localStorage.setItem('email', res.user[0].email);
+        localStorage.setItem('name', res.user.name);
+        localStorage.setItem('email', res.user.email);
 
         alert("Registrado com sucesso!");
 
