@@ -18,7 +18,7 @@ const MainHeader = () => {
                 <nav>
                     <ul className={classes.navItens}>
                         <li>
-                            <a href="/feed">Posts</a>
+                            <a href="/feed">Feed</a>
                         </li>
                         <li>
                             <a href="/post">Publicar</a>

@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import MainFooter from "../../components/MainFooter/MainFooter";
 import classes from "./FeedPage.module.css";
-import { uploadPost } from "../../../lib/userActions";
+import { UploadPost } from "../../../lib/userActions";
+import { UploadImage } from "../../../lib/userActions";
+import { CheckAuth } from "../../../lib/auth";
 
 const FeedPage = () => {
 
+    const navigate = useNavigate();
 
     const [posts, setPosts] = useState([]);
 
@@ -19,11 +23,26 @@ const FeedPage = () => {
     const [content, setContent] = useState('');
     const [image, setImage] = useState(null);
 
-    const handlePost = (e) => {
+    const handlePost = async (e) => {
+
         e.preventDefault();
+
+        const auth = await CheckAuth();
+
+        if (!auth.auth) {
+            alert("Seu token expirou, faça login novamente.");
+            navigate("/login")
+        }
+
         console.log(title, content, image);
 
-        uploadPost({ title, content, image });
+        const imageLink = await UploadImage(image);
+
+        console.log(imageLink)
+
+        await UploadPost({ title, content, image, imageLink });
+
+
     }
 
     const handleImageChange = (e) => {
