@@ -13,3 +13,7 @@ git clone https://github.com/JoaoPec/limpaSalvador.git
 3. Run `npm run dev`
 
 4. Open your browser and go to `http://localhost:5173`
+
+## ToDo
+
+Salvar  a imagem em uma pasta temporária e então enviar ele pro cloudinary passando o path
