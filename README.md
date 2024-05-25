@@ -8,12 +8,12 @@
 git clone https://github.com/JoaoPec/limpaSalvador.git
 ```
 
-2. Run `npm install`
+2. Run `npm i`
 
 3. Run `npm run dev`
 
 4. Open your browser and go to `http://localhost:5173`
 
-## ToDo
+## To Do 
 
-Salvar  a imagem em uma pasta temporária e então enviar ele pro cloudinary passando o path
+- Salvar  a imagem em uma pasta temporária e então enviar ele pro cloudinary passando o path

@@ -4,7 +4,7 @@ import MainHeader from "../../components/MainHeader/MainHeader";
 import MainFooter from "../../components/MainFooter/MainFooter";
 import classes from "./FeedPage.module.css";
 import { UploadPost } from "../../../lib/userActions";
-import { UploadImage } from "../../../lib/userActions";
+//import { UploadImage } from "../../../lib/cloudinary";
 import { CheckAuth } from "../../../lib/auth";
 
 const FeedPage = () => {
@@ -24,30 +24,29 @@ const FeedPage = () => {
     const [image, setImage] = useState(null);
 
     const handlePost = async (e) => {
-
         e.preventDefault();
 
         const auth = await CheckAuth();
 
         if (!auth.auth) {
             alert("Seu token expirou, faça login novamente.");
-            navigate("/login")
+            navigate("/login");
+            return;
         }
 
-        console.log(title, content, image);
+        const res = await UploadPost({ title, content, image });
 
-        const imageLink = await UploadImage(image);
+        if (res.error) {
+            alert(res.message);
+            return;
+        }
 
-        console.log(imageLink)
-
-        await UploadPost({ title, content, image, imageLink });
-
-
-    }
+        alert("Postagem realizada com sucesso!");
+    };
 
     const handleImageChange = (e) => {
         setImage(e.target.files[0]);
-    }
+    };
 
     return (
         <>
@@ -74,7 +73,7 @@ const FeedPage = () => {
                             accept="image/*"
                             onChange={handleImageChange}
                         />
-                        <button>Enviar</button>
+                        <button type="submit">Enviar</button>
                     </form>
                 </div>
 
