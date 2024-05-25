@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import MainFooter from "../../components/MainFooter/MainFooter";
 import classes from "./FeedPage.module.css";
-import { UploadPost } from "../../../lib/userActions";
-//import { UploadImage } from "../../../lib/cloudinary";
+import { UploadPost, GetPosts } from "../../../lib/userActions";
 import { CheckAuth } from "../../../lib/auth";
 
 const FeedPage = () => {
@@ -14,9 +13,20 @@ const FeedPage = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(response => response.json())
-            .then(data => setPosts(data));
+        const fetchPosts = async () => {
+            const res = await GetPosts();
+
+            if (res.error) {
+                alert(res.message);
+                return;
+            }
+
+            console.log(res)
+
+            setPosts(res);
+        };
+
+        fetchPosts();
     }, []);
 
     const [title, setTitle] = useState('');
@@ -42,6 +52,9 @@ const FeedPage = () => {
         }
 
         alert("Postagem realizada com sucesso!");
+
+        window.location.reload();
+
     };
 
     const handleImageChange = (e) => {
@@ -78,23 +91,30 @@ const FeedPage = () => {
                 </div>
 
                 <div className={classes.feedContainer}>
-                    <div className={classes.feedCard}>
-                        <div className={classes.feedHeader}>
-                            <img src="https://as1.ftcdn.net/v2/jpg/06/68/13/42/1000_F_668134254_WU6g7U4oelzOwOzRhE84Ok0mliBlkBbl.jpg" alt="Profile" />
-                            <div>
-                                <h3>Nome do Usuário</h3>
-                                <span>1 hora atrás</span>
+                    {posts.slice().reverse().map(post => (
+                        <div key={post.id} className={classes.feedCard}>
+                            <div className={classes.feedHeader}>
+                                {/* Aqui você pode colocar a imagem do usuário */}
+                                <img src={post.image_url} alt="Profile" />
+                                <div>
+                                    {/* Aqui você pode mostrar o nome do usuário */}
+                                    <h3>Nome do Usuário</h3>
+                                    {/* Aqui você pode mostrar a data da postagem */}
+                                    <span>{new Date(post.created_at).toLocaleString()}</span>
+                                </div>
+                            </div>
+                            {/* Aqui você mostra a imagem do post */}
+                            <img src={post.image_url} alt="Post" />
+                            {/* Aqui você mostra o conteúdo do post */}
+                            <div>{post.content}</div>
+                            <div className={classes.feedFooter}>
+                                <button>Denunciar</button>
+                                <button>Comentar</button>
                             </div>
                         </div>
-                        <img src="https://as1.ftcdn.net/v2/jpg/06/68/13/42/1000_F_668134254_WU6g7U4oelzOwOzRhE84Ok0mliBlkBbl.jpg" alt="Post" />
-                        <div className={classes.feedFooter}>
-                            <button>Denunciar</button>
-                            <button>Comentar</button>
-                        </div>
-                    </div>
-
-
+                    ))}
                 </div>
+
 
             </main >
             <MainFooter />
