@@ -5,7 +5,6 @@ import RegisterPage from './pages/Register/RegisterPage'
 import LoginPage from './pages/Login/LoginPage'
 import FeedPage from './pages/Feed/FeedPage'
 import ActionsPage from './pages/actions/ActionsPage'
-import AquilesPage from './pages/Aquiles/AquilesPage'
 
 function App() {
 
@@ -17,7 +16,6 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/actions" element={<ActionsPage />} />
         <Route path="/feed" element={<FeedPage />} />
-        <Route path="/aquiles" element={<AquilesPage/>} />
       </Routes>
     </BrowserRouter>
   )
