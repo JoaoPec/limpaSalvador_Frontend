@@ -32,6 +32,7 @@ const FeedPage = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [image, setImage] = useState(null);
+    const [neighborhood, setNeighborhood] = useState('');
 
     const handlePost = async (e) => {
         e.preventDefault();
@@ -44,7 +45,7 @@ const FeedPage = () => {
             return;
         }
 
-        const res = await UploadPost({ title, content, image });
+        const res = await UploadPost({ title, content, image, bairro: neighborhood });
 
         if (res.error) {
             alert(res.message);
@@ -86,6 +87,19 @@ const FeedPage = () => {
                             accept="image/*"
                             onChange={handleImageChange}
                         />
+                        <select
+                            id="neighborhoodInput"
+                            value={neighborhood}
+                            onChange={(e) => setNeighborhood(e.target.value)}
+                        >
+                            <option value="">Selecione um bairro</option>
+                            <option value="Barra">Barra</option>
+                            <option value="Rio Vermelho">Rio Vermelho</option>
+                            <option value="Pituba">Pituba</option>
+                            <option value="Brotas">Brotas</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Cajazeiras">Cajazeiras</option>
+                        </select>
                         <button type="submit">Enviar</button>
                     </form>
                 </div>
@@ -93,21 +107,20 @@ const FeedPage = () => {
                 <div className={classes.feedContainer}>
                     {posts.slice().reverse().map(post => (
                         <div key={post.id} className={classes.feedCard}>
-                            <div className={classes.feedHeader}>
-                                {/* Aqui você pode colocar a imagem do usuário */}
-                                <img src={post.image_url} alt="Profile" />
+                            <div className={classes.cardHeader}>
                                 <div>
+                                    <h2 className={classes.cardTitle}>{post.title}</h2>
+                                    <p>{post.content}</p>
                                     {/* Aqui você pode mostrar o nome do usuário */}
-                                    <h3>Nome do Usuário</h3>
+                                    <h3>Autor: {post.user_name}</h3>
                                     {/* Aqui você pode mostrar a data da postagem */}
-                                    <span>{new Date(post.created_at).toLocaleString()}</span>
+                                    <span>Post realizado em {new Date(post.created_at).toLocaleString()}</span>
                                 </div>
                             </div>
                             {/* Aqui você mostra a imagem do post */}
                             <img src={post.image_url} alt="Post" />
                             {/* Aqui você mostra o conteúdo do post */}
-                            <div>{post.content}</div>
-                            <div className={classes.feedFooter}>
+                            <div className={classes.cardFooter}>
                                 <button>Denunciar</button>
                                 <button>Comentar</button>
                             </div>
