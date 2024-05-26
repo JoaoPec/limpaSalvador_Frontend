@@ -12,7 +12,7 @@ const RegisterPage = () => {
     const [user, setUser] = useState({
         name: '',
         email: '',
-        number: '',
+        phone: '',
         password: '',
         confirmPassword: ''
     });
@@ -65,8 +65,8 @@ const RegisterPage = () => {
                     <input type="text" id="name" name="name" value={user.name} onChange={handleInputChange} required />
                     <label htmlFor="email">Email:</label>
                     <input type="email" id="email" name="email" value={user.email} onChange={handleInputChange} required />
-                    <label htmlFor="number">Número de telefone:</label>
-                    <input type="text" id="number" name="number" value={user.number} onChange={handleInputChange} required />
+                    <label htmlFor="phone">Número de telefone:</label>
+                    <input type="text" id="number" name="phone" value={user.phone} onChange={handleInputChange} required />
                     <label htmlFor="password">Senha:</label>
                     <input type="password" id="password" name="password" value={user.password} onChange={handleInputChange} required />
                     <label htmlFor="confirmPassword">Confirmar Senha:</label>
