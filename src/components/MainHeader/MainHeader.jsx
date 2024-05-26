@@ -21,10 +21,10 @@ const MainHeader = () => {
                             <a href="/feed">Feed</a>
                         </li>
                         <li>
-                            <a href="/post">Publicar</a>
+                            <a href="/actions">Conheça ações</a>
                         </li>
                         <li>
-                            <a href="/actions">Conheça ações</a>
+                            <a href="/profile">Meu Perfil</a>
                         </li>
                         <li>
                             <a onClick={Logout} href="/">Logout</a>

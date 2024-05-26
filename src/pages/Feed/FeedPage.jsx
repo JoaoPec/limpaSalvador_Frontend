@@ -65,7 +65,7 @@ const FeedPage = () => {
     return (
         <>
             <MainHeader />
-            <main>
+            <main className={classes.main}>
                 <div>
                     <form className={classes.inputContainer} onSubmit={handlePost}>
                         <input

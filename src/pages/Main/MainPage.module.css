@@ -11,6 +11,8 @@
     height: auto;
     margin-bottom: 20px;
     margin-top: 280px;
+    position: relative;
+    top: 70px;
 }
 
 .container {

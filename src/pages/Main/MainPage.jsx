@@ -2,7 +2,6 @@ import React from "react";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import MainFooter from "../../components/MainFooter/MainFooter";
 import classes from "./MainPage.module.css";
-import { CheckAuth } from "../../../lib/auth";
 
 const MainPage = () => {
 
@@ -14,7 +13,7 @@ const MainPage = () => {
             <>
                 <MainHeader />
                 <main className={classes.main}>
-                    <img src="/hero.jpg" alt="" />
+                    <img src="/hero.jpg" alt="Limpa Salvador" />
                     <section className={classes.container}>
                         <h1>Bem-vindo ao LimpaSalvador!</h1>
                         <p>
@@ -31,7 +30,6 @@ const MainPage = () => {
                             </p>
                         </section>
                     </section>
-                    <button onClick={CheckAuth}>CheckAuth</button>
                     <MainFooter />
                 </main>
             </>
@@ -41,7 +39,7 @@ const MainPage = () => {
             <>
                 <MainHeader />
                 <main className={classes.main}>
-                    <img src="/hero.jpg" alt="" />
+                    <img src="/hero.jpg" alt="Limpa Salvador" />
                     <section className={classes.container}>
                         <h1>Bem-vindo ao LimpaSalvador!</h1>
                         <p>
