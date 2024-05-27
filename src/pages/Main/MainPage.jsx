@@ -17,18 +17,15 @@ const MainPage = () => {
                     <section className={classes.container}>
                         <h1>Bem-vindo ao LimpaSalvador!</h1>
                         <p>
-                            O LimpaSalvador é uma solução online que visa promover a participação ativa dos cidadãos na resolução dos problemas ambientais da cidade. Através desta plataforma, os usuários podem relatar problemas ambientais diretamente de seus smartphones.
+                            Motivados pelo décimo primeiro Objetivo de Desenvolvimento Sustentável no Brasil, o Limpa Salvador atua para a colaboração de Cidades e Comunidades Sustentáveis:
+                            11.6 - Até 2030, reduzir o impacto ambiental negativo per capita das cidades, inclusive prestando especial atenção à qualidade do ar, gestão de resíduos municipais e outros.
                         </p>
                         <h2>Nossa Missão</h2>
                         <p>
-                            Nosso objetivo é criar uma comunidade engajada na preservação do meio ambiente e na promoção de uma cidade mais limpa e sustentável para todos.
+                            Como resultado desse contínuo esforço, esse projeto objetiva ser referência no eixo ecológico de Salvador e conquistar importante marcos como: ampliação da consciência ambiental soteropolitana, disposição de um canal de denúncias seguro sobre o descarte inapropriado de lixo, sensibilização popular acerca de questões de sustentabilidade e reconhecimento público como um local expressivo no engajamento de projetos ambientais atuantes na cidade de Salvador.
                         </p>
-                        <section className={classes.origin}>
-                            <h2>Origem do LimpaSalvador</h2>
-                            <p>
-                                O LimpaSalvador surgiu de um grupo de estudantes preocupados com a causa ecológica. Inspirados pelo desejo de fazer uma diferença positiva em sua comunidade, eles se uniram para criar uma plataforma que permitisse aos cidadãos contribuir ativamente para a melhoria do meio ambiente em Salvador.
-                            </p>
-                        </section>
+                        <h2>Origem</h2>
+                        <p>O projeto Limpa Salvador é uma organização atuante na grande cidade de Salvador, capital do estado da Bahia, que teve a sua criação iniciada no ano de 2024, com a missão de promover a ação de combate ao descarte inapropriado de resíduos e o incentivo para uma maior sustentabilidade ambiental.</p>
                     </section>
 
                     <section className={classes.container}>
