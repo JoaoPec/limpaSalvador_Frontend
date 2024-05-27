@@ -13,8 +13,7 @@
     height: 100px;
 }
 
-
-.navItens {
+.navItems {
     display: flex;
     gap: 3.5rem;
     margin-right: 2rem;
@@ -22,11 +21,10 @@
     font-size: 1.3rem;
 }
 
-.navItens a {
+.navItems a {
     text-decoration: none;
     color: black;
 }
-
 
 .autocomplete_container {
     position: relative;
@@ -67,10 +65,37 @@
     background-color: #f1f1f1;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 768px) {
 
-    .navItens {
+    .navItems {
         display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #36bc65;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navItems.open {
+        display: flex;
     }
 
     .autocomplete_input {
@@ -79,18 +104,18 @@
 
     .header {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        padding: 0;
-        height: 180px;
+        padding: 0 1rem;
+        height: 60px;
     }
 
     .header img {
-        width: 125px;
-        height: 120px;
-        position: relative;
+        width: 50px;
+        height: 50px;
     }
 
-
-
+    .hamburger {
+        display: flex;
+    }
 }

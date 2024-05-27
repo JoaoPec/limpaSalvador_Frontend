@@ -20,6 +20,10 @@ const MainPage = () => {
                             Motivados pelo décimo primeiro Objetivo de Desenvolvimento Sustentável no Brasil, o Limpa Salvador atua para a colaboração de Cidades e Comunidades Sustentáveis:
                             11.6 - Até 2030, reduzir o impacto ambiental negativo per capita das cidades, inclusive prestando especial atenção à qualidade do ar, gestão de resíduos municipais e outros.
                         </p>
+                        <div className={classes.odsImages}>
+                            <img src="/objetivo.jpg" alt="ODS 11" />
+                            <img src="/ods.jpg" alt="ODS" />
+                        </div>
                         <h2>Nossa Missão</h2>
                         <p>
                             Como resultado desse contínuo esforço, esse projeto objetiva ser referência no eixo ecológico de Salvador e conquistar importante marcos como: ampliação da consciência ambiental soteropolitana, disposição de um canal de denúncias seguro sobre o descarte inapropriado de lixo, sensibilização popular acerca de questões de sustentabilidade e reconhecimento público como um local expressivo no engajamento de projetos ambientais atuantes na cidade de Salvador.
@@ -57,6 +61,8 @@ const MainPage = () => {
                     </section>
                     <MainFooter />
                 </main>
+
+
             </>
         );
     } else {
