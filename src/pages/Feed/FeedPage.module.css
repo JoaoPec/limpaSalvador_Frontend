@@ -137,11 +137,6 @@ j
     align-items: center;
 }
 
-.cardHeader h2 {
-    font-size: 24px;
-    position: relative;
-    left: 210px;
-}
 
 .cardFooter {
     margin-top: 10px;
