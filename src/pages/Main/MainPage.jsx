@@ -70,7 +70,6 @@ const MainPage = () => {
                 <MainHeader />
                 <main className={classes.main}>
                     <img src="/hero.jpg" alt="Limpa Salvador" />
-                    <img src="/hero.jpg" alt="Limpa Salvador" />
                     <section className={classes.container}>
                         <h1>Bem-vindo ao LimpaSalvador!</h1>
                         <p>
