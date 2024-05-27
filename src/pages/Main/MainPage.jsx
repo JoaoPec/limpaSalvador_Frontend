@@ -30,6 +30,34 @@ const MainPage = () => {
                             </p>
                         </section>
                     </section>
+
+                    <section className={classes.container}>
+
+                        <h2>Áreas da plataforma</h2>
+
+                        <div className={classes.areas}>
+                            <div>
+                                <h3>Feed</h3>
+                                <p>
+                                    Veja as postagens de outros usuários e compartilhe suas próprias denúncias.
+                                </p>
+                            </div>
+                            <div>
+                                <h3>Ações</h3>
+                                <p>
+                                    Conheça ações ecológicas em Salvador e participe de eventos para ajudar a manter a cidade limpa e verde.
+                                </p>
+                            </div>
+                            <div>
+                                <h3>Perfil</h3>
+                                <p>
+                                    Acesse o seu perfil para ver suas postagens e editar suas informações.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </section>
                     <MainFooter />
                 </main>
             </>

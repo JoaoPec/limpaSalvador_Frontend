@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border-width: 5px;
+    border-width: 3px;
     border-color: black;
     border-style: solid;
     border-radius: 10px;
@@ -97,7 +97,8 @@ j
     width: 100%;
     max-width: 500px;
     margin-top: 20px;
-    border-width: 10px;
+    margin-bottom: 15px;
+    border-width: 3px;
     border-color: black;
     border-style: solid;
     border-radius: 10px;

@@ -21,7 +21,7 @@ const MainHeader = () => {
                             <a href="/feed">Feed</a>
                         </li>
                         <li>
-                            <a href="/actions">Conheça ações</a>
+                            <a href="/actions">Barril dobrado!</a>
                         </li>
                         <li>
                             <a href="/profile">Meu Perfil</a>

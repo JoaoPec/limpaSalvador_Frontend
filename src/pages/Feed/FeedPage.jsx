@@ -12,6 +12,8 @@ const FeedPage = () => {
 
     const [posts, setPosts] = useState([]);
 
+    const isLoged = localStorage.getItem('token');
+
     useEffect(() => {
         const fetchPosts = async () => {
             const res = await GetPosts();
@@ -66,43 +68,45 @@ const FeedPage = () => {
         <>
             <MainHeader />
             <main className={classes.main}>
-                <div>
-                    <form className={classes.inputContainer} onSubmit={handlePost}>
-                        <input
-                            type="text"
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)}
-                            className={classes.titleInput}
-                            placeholder="Crie um título para a sua postagem"
-                        />
-                        <textarea
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                            placeholder="Compartilhe a sua denúncia"
-                        />
-                        <label htmlFor="fileInput">Escolha uma imagem</label>
-                        <input
-                            type="file"
-                            id="fileInput"
-                            accept="image/*"
-                            onChange={handleImageChange}
-                        />
-                        <select
-                            id="neighborhoodInput"
-                            value={neighborhood}
-                            onChange={(e) => setNeighborhood(e.target.value)}
-                        >
-                            <option value="">Selecione um bairro</option>
-                            <option value="Barra">Barra</option>
-                            <option value="Rio Vermelho">Rio Vermelho</option>
-                            <option value="Pituba">Pituba</option>
-                            <option value="Brotas">Brotas</option>
-                            <option value="Centro">Centro</option>
-                            <option value="Cajazeiras">Cajazeiras</option>
-                        </select>
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
+                {isLoged && (
+                    <div>
+                        <form className={classes.inputContainer} onSubmit={handlePost}>
+                            <input
+                                type="text"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                                className={classes.titleInput}
+                                placeholder="Crie um título para a sua postagem"
+                            />
+                            <textarea
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                                placeholder="Compartilhe a sua denúncia"
+                            />
+                            <label htmlFor="fileInput">Escolha uma imagem</label>
+                            <input
+                                type="file"
+                                id="fileInput"
+                                accept="image/*"
+                                onChange={handleImageChange}
+                            />
+                            <select
+                                id="neighborhoodInput"
+                                value={neighborhood}
+                                onChange={(e) => setNeighborhood(e.target.value)}
+                            >
+                                <option value="">Selecione um bairro</option>
+                                <option value="Barra">Barra</option>
+                                <option value="Rio Vermelho">Rio Vermelho</option>
+                                <option value="Pituba">Pituba</option>
+                                <option value="Brotas">Brotas</option>
+                                <option value="Centro">Centro</option>
+                                <option value="Cajazeiras">Cajazeiras</option>
+                            </select>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                )}
 
                 <div className={classes.feedContainer}>
                     {posts.slice().reverse().map(post => (
@@ -111,15 +115,11 @@ const FeedPage = () => {
                                 <div>
                                     <h2 className={classes.cardTitle}>{post.title}</h2>
                                     <p>{post.content}</p>
-                                    {/* Aqui você pode mostrar o nome do usuário */}
                                     <h3>Autor: {post.user_name}</h3>
-                                    {/* Aqui você pode mostrar a data da postagem */}
                                     <span>Post realizado em {new Date(post.created_at).toLocaleString()}</span>
                                 </div>
                             </div>
-                            {/* Aqui você mostra a imagem do post */}
                             <img src={post.image_url} alt="Post" />
-                            {/* Aqui você mostra o conteúdo do post */}
                             <div className={classes.cardFooter}>
                                 <button>Denunciar</button>
                                 <button>Comentar</button>
