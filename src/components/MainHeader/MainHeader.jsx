@@ -47,9 +47,6 @@ const MainHeader = () => {
                         <a href="/feed">Posts</a>
                     </li>
                     <li>
-                        <a href="/post">Publicar</a>
-                    </li>
-                    <li>
                         <a href="/actions">Barril dobrado!</a>
                     </li>
                     <li>
