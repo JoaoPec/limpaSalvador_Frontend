@@ -50,7 +50,7 @@ const MainHeader = () => {
                         <a href="/post">Publicar</a>
                     </li>
                     <li>
-                        <a href="/actions">Conheça ações</a>
+                        <a href="/actions">Barril dobrado!</a>
                     </li>
                     <li>
                         <a href="/register">Cadastrar-se</a>
