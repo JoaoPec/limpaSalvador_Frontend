@@ -23,7 +23,7 @@ const MainHeader = () => {
                         <a href="/feed">Feed</a>
                     </li>
                     <li>
-                        <a href="/actions">Barril dobrado!</a>
+                        <a href="/actions">Barril Dobrado</a>
                     </li>
                     {isLoged ? (
                         <>

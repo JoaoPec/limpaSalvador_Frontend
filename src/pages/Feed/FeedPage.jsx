@@ -115,6 +115,7 @@ const FeedPage = () => {
                                 <div>
                                     <h2 className={classes.cardTitle}>{post.title}</h2>
                                     <p>{post.content}</p>
+                                    <h3>Bairro: {post.bairro}</h3>
                                     <h3>Autor: {post.user_name}</h3>
                                     <span>Post realizado em {new Date(post.created_at).toLocaleString()}</span>
                                 </div>
