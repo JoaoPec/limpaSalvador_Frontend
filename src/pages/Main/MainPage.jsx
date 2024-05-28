@@ -100,7 +100,7 @@ const MainPage = () => {
                                 </p>
                             </div>
                             <div>
-                                <h3>Ações</h3>
+                                <h3>Barril Dobrado</h3>
                                 <p>
                                     Conheça ações ecológicas em Salvador e participe de eventos para ajudar a manter a cidade limpa e verde.
                                 </p>

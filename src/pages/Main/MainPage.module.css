@@ -46,6 +46,7 @@
 .buttonsContainer {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
     gap: 150px;
 }
 
