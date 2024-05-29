@@ -1,5 +1,13 @@
 # LimpaSalvador Frontend
 
+## Deploy do projeto:
+
+- [LimpaSalvador](https://limpa-salvador-frontend.vercel.app/)
+
+## Repositório do Backend:
+
+- [LimpaSalvador Backend](https://github.com/JoaoPec/limpaSalvador_backend)
+
 ## Visão Geral do Projeto
 
 O projeto LimpaSalvador tem como objetivo facilitar a denúncia de locais com acúmulo de lixo na cidade de Salvador, promovendo a limpeza e o bem-estar da comunidade. Os usuários podem registrar-se, autenticar-se, criar posts denunciando áreas sujas, e visualizar postagens de outras pessoas. Cada postagem pode conter uma imagem e informações detalhadas sobre o local denunciado.
