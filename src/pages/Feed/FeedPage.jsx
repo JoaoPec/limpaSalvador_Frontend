@@ -150,36 +150,7 @@ const FeedPage = () => {
           </div>
         )}
 
-        <div className={classes.feedContainer}>
-          {posts
-            .slice()
-            .reverse()
-            .map((post) => (
-              <div key={post.id} className={classes.feedCard}>
-                <div className={classes.cardHeader}>
-                  <div>
-                    <h2 className={classes.cardTitle}>{post.title}</h2>
-                    <p>{post.content}</p>
-                    <h3>Bairro: {post.bairro}</h3>
-                    <h3>Autor: {post.user_name}</h3>
-                    <span>
-                      Post realizado em{" "}
-                      {new Date(post.created_at).toLocaleString()}
-                    </span>
-                  </div>
-                </div>
-                <img src={post.image_url} alt="Post" />
-                <div className={classes.cardFooter}>
-                  <button>Denunciar</button>
-                  <button onClick={() => toggleComments(post.id)}>
-                    {showComments[post.id]
-                      ? "Esconder Comentários"
-                      : "Mostrar Comentários"}
-                  </button>
-                </div>
-              </div>
-            ))}
-        </div>
+        
         <div className={classes.feedContainer}>
           {posts
             .slice()
