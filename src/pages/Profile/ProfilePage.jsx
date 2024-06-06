@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useNavigate } from "react";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import { GetUserProfile } from "../../../lib/userActions";
 import classes from "./ProfilePage.module.css";
@@ -10,6 +10,8 @@ const ProfilePage = () => {
 
   // Assuming you have a way to get the logged in user's ID, e.g., from localStorage or context
   const userId = localStorage.getItem("userId");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -36,7 +38,9 @@ const ProfilePage = () => {
   }
 
   if (!profile) {
-    return <p>No profile data available</p>;
+    alert("Você precisa estar logado para acessar essa página.");
+
+    navigate("/login");
   }
 
   return (
