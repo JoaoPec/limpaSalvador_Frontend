@@ -150,7 +150,6 @@ const FeedPage = () => {
           </div>
         )}
 
-        
         <div className={classes.feedContainer}>
           {posts
             .slice()
