@@ -14,7 +14,8 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const data = await GetUserProfile(userId);
+        const data = await GetUserProfile();
+
         setProfile(data);
       } catch (err) {
         setError(err.message);
@@ -44,6 +45,7 @@ const ProfilePage = () => {
       <div className={classes.profileContainer}>
         <div className={classes.profileHeader}>
           <h1>{profile.user.name}</h1>
+          <span>{profile.user.email}</span>
         </div>
 
         <div className={classes.section}>
@@ -51,12 +53,26 @@ const ProfilePage = () => {
           {profile.posts.length > 0 ? (
             <ul className={classes.postsList}>
               {profile.posts.map((post) => (
-                <li key={post.id}>
-                  <h3>{post.title}</h3>
-                  <p>{post.content}</p>
-                  <span>
-                    Postado em {new Date(post.created_at).toLocaleString()}
-                  </span>
+                <li key={post.id} className={classes.postItem}>
+                  <img
+                    src={post.image_url}
+                    alt={post.title}
+                    className={classes.postImage}
+                  />
+                  <div className={classes.postContent}>
+                    <h3>{post.title}</h3>
+                    <p>{post.content}</p>
+                    <span>
+                      Postado em {new Date(post.created_at).toLocaleString()}
+                    </span>
+                    <span>Bairro: {post.bairro}</span>
+                  </div>
+                  <button
+                    className={classes.deleteButton}
+                    onClick={() => handleDeletePost(post.id)}
+                  >
+                    🗑️
+                  </button>
                 </li>
               ))}
             </ul>
@@ -70,10 +86,10 @@ const ProfilePage = () => {
           {profile.comments.length > 0 ? (
             <ul className={classes.commentsList}>
               {profile.comments.map((comment) => (
-                <li key={comment.id}>
+                <li key={comment.id} className={classes.commentItem}>
                   <p>{comment.content}</p>
                   <span>
-                    {comment.user_name} -{" "}
+                    {comment.post_title} -{" "}
                     {new Date(comment.created_at).toLocaleString()}
                   </span>
                 </li>
