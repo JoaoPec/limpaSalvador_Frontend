@@ -1,16 +1,15 @@
-import React, { useEffect, useState, useNavigate } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import { GetUserProfile } from "../../../lib/userActions";
-import classes from "./ProfilePage.module.css";
 import { CheckAuth } from "../../../lib/auth";
+import { DeletePost } from "../../../lib/userActions";
+import classes from "./ProfilePage.module.css";
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  // Assuming you have a way to get the logged in user's ID, e.g., from localStorage or context
-  const userId = localStorage.getItem("userId");
 
   const navigate = useNavigate();
 
@@ -19,14 +18,12 @@ const ProfilePage = () => {
       const auth = await CheckAuth();
 
       if (!auth.auth) {
-        alert("Seu token expirou, faça login novamente.");
         navigate("/login");
         return;
       }
 
       try {
         const data = await GetUserProfile();
-
         setProfile(data);
       } catch (err) {
         setError(err.message);
@@ -36,21 +33,38 @@ const ProfilePage = () => {
     };
 
     fetchProfile();
-  }, [userId]);
+  }, []);
+
+  useEffect(() => {
+    if (error) {
+      alert("Ocorreu um erro ao carregar o perfil.");
+      navigate("/login");
+    }
+  }, [error, navigate]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className={classes.loading}>Loading...</p>;
   }
 
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
+  const handleDeletePost = async (postId) => {
+    const res = await DeletePost(postId);
 
-  if (!profile) {
-    alert("Você precisa estar logado para acessar essa página.");
+    if (res.error) {
+      alert(res.message);
+      return;
+    }
 
-    navigate("/login");
-  }
+    console.log("post deleted successfully");
+
+    alert("Post deletado com sucesso.");
+
+    const newPosts = profile.posts.filter((post) => post.id !== postId);
+
+    setProfile({
+      ...profile,
+      posts: newPosts,
+    });
+  };
 
   return (
     <>

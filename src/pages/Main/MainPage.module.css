@@ -1,124 +1,129 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
 }
 
 .main img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .container h1 {
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 20px;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .container p {
-    font-size: 20px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
+  font-size: 20px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .odsImages {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 80px;
 }
 
 .odsImages img {
-    max-width: 400px;
-    height: auto;
+  max-width: 400px;
+  height: auto;
 }
 
 .buttonsContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    gap: 150px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 150px;
 }
 
 .buttonsContainer button {
-    padding: 20px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #36BC65;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 20px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #36bc65;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .origin {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .origin h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .origin p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
 }
 
 .areas {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.loading {
+  font-size: 20px;
+  color: #666;
 }
 
 @media screen and (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
+  .container {
+    padding: 20px;
+  }
 
-    .container h1 {
-        font-size: 24px;
-    }
+  .container h1 {
+    font-size: 24px;
+  }
 
-    .container p {
-        font-size: 16px;
-    }
+  .container p {
+    font-size: 16px;
+  }
 
-    .buttonsContainer {
-        gap: 45px;
-    }
+  .buttonsContainer {
+    gap: 45px;
+  }
 
-    .buttonsContainer button {
-        padding: 15px 20px;
-        font-size: 14px;
-    }
+  .buttonsContainer button {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
 
-    .origin {
-        margin-top: 20px;
-    }
+  .origin {
+    margin-top: 20px;
+  }
 
-    .origin h2 {
-        font-size: 20px;
-    }
+  .origin h2 {
+    font-size: 20px;
+  }
 
-    .origin p {
-        font-size: 14px;
-    }
+  .origin p {
+    font-size: 14px;
+  }
 
-    .odsImages {
-        flex-direction: column;
-        align-items: center;
-    }
+  .odsImages {
+    flex-direction: column;
+    align-items: center;
+  }
 }

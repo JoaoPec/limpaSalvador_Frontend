@@ -1,14 +1,13 @@
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import MainPage from './pages/Main/MainPage'
-import RegisterPage from './pages/Register/RegisterPage'
-import LoginPage from './pages/Login/LoginPage'
-import FeedPage from './pages/Feed/FeedPage'
-import ActionsPage from './pages/actions/ActionsPage'
-import ProfilePage from './pages/Profile/ProfilePage'
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainPage from "./pages/Main/MainPage";
+import RegisterPage from "./pages/Register/RegisterPage";
+import LoginPage from "./pages/Login/LoginPage";
+import FeedPage from "./pages/Feed/FeedPage";
+import ActionsPage from "./pages/actions/ActionsPage";
+import ProfilePage from "./pages/Profile/ProfilePage";
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
@@ -20,7 +19,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
