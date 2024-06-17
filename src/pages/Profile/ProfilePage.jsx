@@ -2,6 +2,7 @@ import React, { useEffect, useState, useNavigate } from "react";
 import MainHeader from "../../components/MainHeader/MainHeader";
 import { GetUserProfile } from "../../../lib/userActions";
 import classes from "./ProfilePage.module.css";
+import { CheckAuth } from "../../../lib/auth";
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState(null);
@@ -15,6 +16,14 @@ const ProfilePage = () => {
 
   useEffect(() => {
     const fetchProfile = async () => {
+      const auth = await CheckAuth();
+
+      if (!auth.auth) {
+        alert("Seu token expirou, faça login novamente.");
+        navigate("/login");
+        return;
+      }
+
       try {
         const data = await GetUserProfile();
 
